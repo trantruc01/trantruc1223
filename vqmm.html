@@ -201,12 +201,14 @@
         function updatePrizes() {
             let prizeInputs = document.querySelectorAll('.prize-input');
             let newPrizes = [];
-
+            let lastColor = null;
             prizeInputs.forEach(input => {
-                if (input.value.trim() !== '') {
-                    newPrizes.push({'fillStyle': getRandomColor(), 'text': input.value});
-                }
-            });
+        if (input.value.trim() !== '') {
+            let color = getRandomColor(lastColor);
+            newPrizes.push({'fillStyle': color, 'text': input.value});
+            lastColor = color;
+        }
+    });
             setTimeout(() => location.reload(), 1000); // Reload page after update
 
             if (newPrizes.length > 0) {
@@ -222,13 +224,12 @@
         }
 
         // Tạo màu ngẫu nhiên cho phần thưởng
-        function getRandomColor() {
-            let letters = '0123456789ABCDEF';
-            let color = '#';
-            for (let i = 0; i < 6; i++) {
-                color += letters[Math.floor(Math.random() * 16)];
-            }
-            return color;
+        function getRandomColor(lastColor) {
+            const colors = ['#eae56f', '#89f26e', '#7de6ef', '#e7706f'];
+    let availableColors = colors.filter(color => color !== lastColor);
+    return availableColors[Math.floor(Math.random() * availableColors.length)];
+
+   
         }
 
         // Tạo danh sách nhập liệu cho phần thưởng từ biến danhsach
