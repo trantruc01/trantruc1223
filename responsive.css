@@ -1,0 +1,88 @@
+/* Reset margin and padding */
+body, h1, h2, h3, p, table, td, tr, div, input, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set body background color and font */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Centering the table containing the wheel */
+table {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+/* Making the canvas responsive */
+canvas {
+    width: 100%;
+    height: auto;
+}
+
+/* Responsive buttons */
+button.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button.btn:hover {
+    background-color: #45a049;
+}
+
+/* Styling for the prize list and inputs */
+#prizes-list {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.mgt-100{
+    margin-top: 550px;
+}
+.prize-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+    table {
+        width: 100%;
+    }
+
+    button.btn {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    canvas {
+        width: 100%;
+        height: auto;
+    }
+
+    .prize-input {
+        font-size: 18px;
+        padding: 12px;
+    }
+}
